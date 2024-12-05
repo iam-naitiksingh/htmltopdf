@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload HTML to Generate PDF</title>
+</head>
+<body>
+    <h1>Upload HTML File to Generate PDF</h1>
+    <form action="{% url 'generatepdf' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="html_file">Select HTML file:</label>
+        <input type="file" id="html_file" name="html_file" accept=".html">
+        <button type="submit">Generate PDF</button>
+    </form>
+</body>
+</html>
